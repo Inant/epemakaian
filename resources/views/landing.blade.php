@@ -185,19 +185,22 @@
 @endsection
 @section('js')
 <script>
+            const grafik3 = {!!$penerimaanPerKecataman!!};
+            const grafik4 = {!!$piutangPerKecataman!!};
             Morris.Bar({
                 element: 'grafik_penerimaan_perkecamatan',
-                data: [
-                    { year: '2008', value: 1500 , a: 2000, b: 1000, c: 500 },
-                    { year: '2009', value: 1000, a: 2000, b: 1500, c: 1500},
-                    { year: '2010', value: 2000, a: 1500, b: 1000, c: 2500 },
-                    { year: '2011', value: 1500, a: 2500, b: 1500, c: 1500 },
-                    { year: '2012', value: 2000, a: 1000, b: 2000, c: 500 },
-                    { year: '2013', value: 2500, a: 1500, b: 500, c: 1500 },
-                    { year: '2014', value: 1000, a: 2000, b: 2500, c: 1500 },
-                    { year: '2015', value: 0, a: 2500, b: 1000 },
-                    { year: '2016', value: 1000, a: 2000, b: 1500 }
-                ], //supply the response data (which is now a JS variable) directly, no extra brackets
+                data: //[
+                    grafik3
+                    // { year: '2008', value: 1500 , a: 2000, b: 1000, c: 500 },
+                    // { year: '2009', value: 1000, a: 2000, b: 1500, c: 1500},
+                    // { year: '2010', value: 2000, a: 1500, b: 1000, c: 2500 },
+                    // { year: '2011', value: 1500, a: 2500, b: 1500, c: 1500 },
+                    // { year: '2012', value: 2000, a: 1000, b: 2000, c: 500 },
+                    // { year: '2013', value: 2500, a: 1500, b: 500, c: 1500 },
+                    // { year: '2014', value: 1000, a: 2000, b: 2500, c: 1500 },
+                    // { year: '2015', value: 0, a: 2500, b: 1000 },
+                    // { year: '2016', value: 1000, a: 2000, b: 1500 }
+                //], //supply the response data (which is now a JS variable) directly, no extra brackets
                 xkey: 'year',
                 ykeys: ['value','a','b', 'c'],
                 //   ymax: 'auto[30]',

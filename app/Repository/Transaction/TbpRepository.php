@@ -31,7 +31,7 @@ class TbpRepository
                     ->leftjoin('kelurahan','kelurahan.id','pemakai.kelurahan_id')
                     ->leftjoin('kecamatan','kecamatan.id','kelurahan.kecamatan_id')
         ->selectRaw('SUM(tbp_detail.nominal) as total,YEAR(tbp.tanggal) as tahun,kecamatan.nama')
-        ->whereRaw("YEAR(tbp.tanggal)=$attributes")
+        // ->whereRaw("YEAR(tbp.tanggal)=$attributes")
         ->groupBy('tahun','kecamatan.nama')       
         ->get();
 

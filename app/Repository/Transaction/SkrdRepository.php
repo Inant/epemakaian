@@ -230,4 +230,8 @@ class SkrdRepository
 
         return $skrd;
     }
+    public function sumAllKcmtn()
+    {
+        return DB::select(DB::raw("SELECT SUM(nominal) AS total,YEAR(tanggal) AS tahun, kecamatan.nama,(SELECT SUM(tbp_detail.nominal) AS total_tbp FROM tbp LEFT JOIN tbp_detail ON tbp.id = tbp_detail.tbp_id WHERE YEAR(tbp.tanggal) = tahun) AS ttl FROM skrd LEFT JOIN pemakai ON pemakai.id = skrd.pemakai_id LEFT JOIN kelurahan ON kelurahan.id = pemakai.kelurahan_id LEFT JOIN kecamatan ON kecamatan.id = kelurahan.kecamatan_id GROUP BY `tahun`,kecamatan.nama ORDER BY `tahun` ASC"));
+    }
 }

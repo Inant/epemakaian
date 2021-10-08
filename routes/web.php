@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('landing');
+Route::get('/tesdata', 'HomeController@testTbp');
+Route::get('/tesskrd', 'HomeController@testSkrd');
 Route::get('/grafik_piutang', 'HomeController@grafik_piutang')->name('grafik_piutang');
 
 Auth::routes();
