@@ -186,7 +186,7 @@
 @section('js')
 <script>
             const grafik3 = {!!$penerimaanPerKecataman!!};
-            const grafik4 = {!!$piutangPerKecataman!!};
+            const grafik4 = {!!$piutangPerKecamatan!!};
             Morris.Bar({
                 element: 'grafik_penerimaan_perkecamatan',
                 data: //[
